@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To My Bae, Dancan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@300;400;500;600&family=EB+Garamond:wght@400;500;600&family=Playfair+Display:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --purple: #8A2BE2;
+            --pink: #FF6B8B;
+            --deep-purple: #9012f7;
+            --ivory: #FFFFF0;
+            --light-bg: #faf8ff;
+            --charcoal: #2c2c3c;
+            --light-purple: rgba(138, 43, 226, 0.1);
+            --light-pink: rgba(255, 107, 139, 0.1);
+            --gold: #D4AF37;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #2c2c3c 50%, #16213e 100%);
+            color: var(--ivory);
+            line-height: 1.6;
+            overflow: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            overflow: hidden;
+        }
+
+        .bg-particle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0;
+            animation: floatParticle 20s infinite linear;
+        }
+
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.3;
+            }
+
+            90% {
+                opacity: 0.3;
+            }
+
+            100% {
+                transform: translateY(-100px) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Main Container */
+        .entry-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Central Floral Circle */
+        .floral-circle {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            margin-bottom: 60px;
+            animation: gentleFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes gentleFloat {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+        }
+
+        .circle-outer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 2px solid rgba(138, 43, 226, 0.3);
+            border-radius: 50%;
+            animation: rotateCircle 40s linear infinite;
+        }
+
+        .circle-inner {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 300px;
+            height: 300px;
+            border: 1px solid rgba(255, 107, 139, 0.2);
+            border-radius: 50%;
+            animation: rotateCircle 30s linear infinite reverse;
+        }
+
+        @keyframes rotateCircle {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .floral-element {
+            position: absolute;
+            font-size: 2.5rem;
+            color: var(--purple);
+            opacity: 0.6;
+        }
+
+        .floral-element:nth-child(1) {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .floral-element:nth-child(2) {
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+
+        .floral-element:nth-child(3) {
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .floral-element:nth-child(4) {
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        /* Main Content */
+        .entry-content {
+            text-align: center;
+            max-width: 800px;
+            padding: 40px;
+            background: rgba(28, 28, 44, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(138, 43, 226, 0.2);
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(138, 43, 226, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .entry-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--purple), transparent);
+        }
+
+        .entry-content::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--pink), transparent);
+        }
+
+        /* Typography */
+        .pre-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            color: var(--pink);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .pre-title::before,
+        .pre-title::after {
+            content: '✦';
+            margin: 0 15px;
+            opacity: 0.5;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5.5rem;
+            font-weight: 400;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .name-gradient {
+            background: linear-gradient(135deg, var(--purple), var(--pink), var(--deep-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-family: 'EB Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--ivory);
+            font-style: italic;
+            margin: 30px 0;
+            font-weight: 300;
+            line-height: 1.4;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 30px auto 40px;
+            line-height: 1.8;
+        }
+
+        /* Enter Button */
+        .enter-button {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px 50px;
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            color: white;
+            text-decoration: none;
+            background: linear-gradient(135deg, var(--purple), var(--deep-purple));
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            margin-top: 20px;
+            letter-spacing: 2px;
+            box-shadow:
+                0 10px 30px rgba(138, 43, 226, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.1);
+        }
+
+        .enter-button:hover {
+            transform: translateY(-5px);
+            box-shadow:
+                0 15px 40px rgba(138, 43, 226, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
+            background: linear-gradient(135deg, var(--pink), var(--purple));
+        }
+
+        .enter-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .enter-button:hover::before {
+            left: 100%;
+        }
+
+        .enter-button i {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .enter-button:hover i {
+            transform: translateX(10px);
+        }
+
+        /* Instructions */
+        .instructions {
+            margin-top: 40px;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-style: italic;
+        }
+
+        /* Quote */
+        .quote {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            right: 30px;
+            text-align: center;
+            font-family: 'EB Garamond', serif;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.5);
+            font-style: italic;
+            padding-top: 20px;
+            border-top: 1px solid rgba(138, 43, 226, 0.2);
+        }
+
+        /* Loading Animation */
+        .loading-dots {
+            display: none;
+            gap: 8px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+
+        .loading-dots span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--purple);
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+
+        .loading-dots span:nth-child(1) {
+            animation-delay: -0.32s;
+        }
+
+        .loading-dots span:nth-child(2) {
+            animation-delay: -0.16s;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            80%,
+            100% {
+                transform: scale(0);
+            }
+
+            40% {
+                transform: scale(1);
+            }
+        }
+
+        /* Music Toggle */
+        .music-toggle {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 100;
+        }
+
+        .music-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(28, 28, 44, 0.7);
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            color: var(--purple);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .music-btn:hover {
+            background: rgba(138, 43, 226, 0.2);
+            transform: scale(1.1);
+            color: var(--pink);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+
+            html,
+            body {
+                overflow-x: hidden;
+                overflow-y: auto;
+                min-height: 100vh;
+                height: auto;
+            }
+
+            body {
+                overflow-y: auto;
+                padding: 10px;
+            }
+
+            .entry-container {
+                padding: 10px;
+                min-height: 100vh;
+                height: auto;
+                justify-content: flex-start;
+                padding-top: 60px;
+                overflow-y: auto;
+            }
+
+            .floral-circle {
+                width: 250px;
+                height: 250px;
+                margin-bottom: 30px;
+            }
+
+            .circle-inner {
+                top: 25px;
+                left: 25px;
+                width: 200px;
+                height: 200px;
+            }
+
+            .floral-element {
+                font-size: 1.5rem;
+            }
+
+            .entry-content {
+                padding: 25px 15px;
+                margin: 0 10px;
+                max-width: 95%;
+                backdrop-filter: blur(5px);
+            }
+
+            h1 {
+                font-size: 3rem;
+                margin: 20px 0;
+            }
+
+            .pre-title {
+                font-size: 0.9rem;
+                letter-spacing: 3px;
+                margin-bottom: 15px;
+            }
+
+            .subtitle {
+                font-size: 1.3rem;
+                margin: 20px 0;
+            }
+
+            .description {
+                font-size: 1rem;
+                padding: 0;
+                margin: 20px auto 25px;
+            }
+
+            .enter-button {
+                padding: 15px 30px;
+                font-size: 1rem;
+                gap: 10px;
+                margin-top: 15px;
+            }
+
+            .enter-button i {
+                font-size: 1rem;
+            }
+
+            .instructions {
+                margin-top: 25px;
+                font-size: 0.9rem;
+            }
+
+            .quote {
+                position: relative;
+                bottom: auto;
+                left: auto;
+                right: auto;
+                margin-top: 30px;
+                margin-bottom: 20px;
+                font-size: 0.9rem;
+                padding: 15px 10px 0;
+            }
+
+            .music-toggle {
+                top: 20px;
+                right: 20px;
+            }
+
+            .music-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1rem;
+            }
+
+            /* Adjust background particles for mobile */
+            .animated-bg {
+                display: none;
+                /* Hide complex animation on mobile for performance */
+            }
+
+            /* Adjust floating letters animation for mobile */
+            .fade-in.delay-3 {
+                animation-delay: 0.5s;
+            }
+
+            .fade-in.delay-4 {
+                animation-delay: 1s;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .floral-circle {
+                width: 200px;
+                height: 200px;
+                margin-bottom: 20px;
+            }
+
+            .circle-inner {
+                top: 20px;
+                left: 20px;
+                width: 160px;
+                height: 160px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .description {
+                font-size: 0.9rem;
+                line-height: 1.6;
+            }
+
+            .enter-button {
+                padding: 12px 25px;
+                font-size: 0.9rem;
+            }
+
+            .entry-content {
+                padding: 20px 12px;
+            }
+
+            .pre-title {
+                font-size: 0.8rem;
+                letter-spacing: 2px;
+            }
+
+            .floral-element {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Additional media query for very small screens */
+        @media (max-width: 360px) {
+            .floral-circle {
+                width: 180px;
+                height: 180px;
+            }
+
+            .circle-inner {
+                top: 15px;
+                left: 15px;
+                width: 150px;
+                height: 150px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .entry-content {
+                padding: 15px 10px;
+            }
+        }
+
+        /* Prevent text from being too small */
+        @media (max-width: 320px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .description,
+            .instructions,
+            .quote {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Animation for elements */
+        .fade-in {
+            animation: fadeIn 1.5s ease forwards;
+            opacity: 0;
+        }
+
+        .delay-1 {
+            animation-delay: 0.5s;
+        }
+
+        .delay-2 {
+            animation-delay: 1s;
+        }
+
+        .delay-3 {
+            animation-delay: 1.5s;
+        }
+
+        .delay-4 {
+            animation-delay: 2s;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg" id="animatedBg"></div>
+
+    <!-- Music Player -->
+    <audio id="backgroundMusic" loop>
+        <source src="Kahuti ft Kinoti - Feel The Love - Tubidy.mp3" type="audio/mp3">
+        Your browser does not support audio.
+    </audio>
+
+    <!-- Music Toggle -->
+    <div class="music-toggle">
+        <button class="music-btn" id="musicToggle">
+            <i class="fas fa-music"></i>
+        </button>
+    </div>
+
+    <div class="entry-container">
+        <!-- Floral Circle -->
+        <div class="floral-circle fade-in">
+            <div class="circle-outer"></div>
+            <div class="circle-inner"></div>
+            <div class="floral-element">❀</div>
+            <div class="floral-element">✧</div>
+            <div class="floral-element">✦</div>
+            <div class="floral-element">✿</div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="entry-content fade-in delay-1">
+            <div class="pre-title">Penned From My Heart</div>
+            <h1>
+                <span class="name-gradient">For Dancan</span>
+            </h1>
+
+            <div class="subtitle">An Eternal Expression of Love and Devotion</div>
+
+            <p class="description">
+                Within these digital pages lies a timeless testament to a love that transcends words.
+                A heartfelt letter penned with the deepest affection, waiting to be discovered and cherished.
+            </p>
+
+            <a href="src/index.html" class="enter-button" id="enterButton">
+                Walk In Through The Chambers Of My Heart
+                <i class="fas fa-heart"></i>
+            </a>
+
+            <div class="loading-dots" id="loadingDots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <p class="instructions fade-in delay-2">
+                Prepare to embark on a journey through heartfelt words and timeless sentiments
+            </p>
+        </div>
+
+        <!-- Quote 
+        <div class="quote fade-in delay-3">
+            "Love is composed of a single soul inhabiting two bodies." — Aristotle
+        </div>-->
+    </div>
+
+    <script>
+        // Initialize variables
+        let isMusicPlaying = false;
+        const backgroundMusic = document.getElementById('backgroundMusic');
+        const musicToggle = document.getElementById('musicToggle');
+        const enterButton = document.getElementById('enterButton');
+        const loadingDots = document.getElementById('loadingDots');
+        const animatedBg = document.getElementById('animatedBg');
+
+        // Set music volume
+        backgroundMusic.volume = 0.3;
+
+        // Create animated background particles
+        function createBackgroundParticles() {
+            const colors = ['#8A2BE2', '#FF6B8B', '#9012f7', '#D4AF37'];
+
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'bg-particle';
+
+                const size = Math.random() * 8 + 2;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const left = Math.random() * 100;
+                const delay = Math.random() * 20;
+                const duration = Math.random() * 30 + 20;
+
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.background = `radial-gradient(circle, ${color}, transparent)`;
+                particle.style.left = `${left}%`;
+                particle.style.animationDelay = `${delay}s`;
+                particle.style.animationDuration = `${duration}s`;
+                particle.style.opacity = '0';
+
+                animatedBg.appendChild(particle);
+            }
+        }
+
+        // Music toggle functionality
+        musicToggle.addEventListener('click', function () {
+            if (isMusicPlaying) {
+                backgroundMusic.pause();
+                this.innerHTML = '<i class="fas fa-music"></i>';
+                this.style.color = '#8A2BE2';
+            } else {
+                backgroundMusic.play().then(() => {
+                    isMusicPlaying = true;
+                    this.innerHTML = '<i class="fas fa-volume-up"></i>';
+                    this.style.color = '#FF6B8B';
+
+                    // Create floating hearts on music play
+                    createFloatingHearts();
+                }).catch(error => {
+                    console.log("Music play failed:", error);
+                    showNotification("Click anywhere to enable music");
+                });
+            }
+        });
+
+        // Enter button interaction
+        enterButton.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // Show loading animation
+            loadingDots.style.display = 'flex';
+            this.style.opacity = '0.5';
+            this.style.pointerEvents = 'none';
+
+            // Create transition effect
+            createTransitionEffect();
+
+            // Navigate after delay
+            setTimeout(() => {
+                window.location.href = 'src/index.html';
+            }, 2000);
+        });
+
+        // Create transition effect
+        function createTransitionEffect() {
+            // Create overlay
+            const overlay = document.createElement('div');
+            overlay.style.position = 'fixed';
+            overlay.style.top = '0';
+            overlay.style.left = '0';
+            overlay.style.width = '100%';
+            overlay.style.height = '100%';
+            overlay.style.background = 'linear-gradient(135deg, #8A2BE2, #FF6B8B)';
+            overlay.style.zIndex = '1000';
+            overlay.style.opacity = '0';
+            overlay.style.transition = 'opacity 1s ease';
+
+            document.body.appendChild(overlay);
+
+            // Fade in overlay
+            setTimeout(() => {
+                overlay.style.opacity = '1';
+            }, 100);
+
+            // Create floating letters
+            createFloatingLetters();
+        }
+
+        // Create floating letters
+        function createFloatingLetters() {
+            const letters = ['D', 'U', 'N', 'C', 'A', 'N', '❤'];
+            const colors = ['#8A2BE2', '#FF6B8B', '#9012f7', '#FFFFFF'];
+
+            letters.forEach((letter, index) => {
+                setTimeout(() => {
+                    const letterElement = document.createElement('div');
+                    letterElement.textContent = letter;
+                    letterElement.style.position = 'fixed';
+                    letterElement.style.top = '50%';
+                    letterElement.style.left = '50%';
+                    letterElement.style.fontFamily = "'Playfair Display', serif";
+                    letterElement.style.fontSize = '6rem';
+                    letterElement.style.color = colors[index % colors.length];
+                    letterElement.style.opacity = '0';
+                    letterElement.style.transform = 'translate(-50%, -50%) scale(0)';
+                    letterElement.style.zIndex = '1001';
+                    letterElement.style.fontWeight = 'bold';
+                    letterElement.style.textShadow = '0 0 30px currentColor';
+
+                    document.body.appendChild(letterElement);
+
+                    // Animate letter
+                    letterElement.animate([
+                        {
+                            opacity: 0,
+                            transform: 'translate(-50%, -50%) scale(0) rotate(0deg)'
+                        },
+                        {
+                            opacity: 1,
+                            transform: 'translate(-50%, -50%) scale(1) rotate(360deg)'
+                        },
+                        {
+                            opacity: 0,
+                            transform: 'translate(-50%, -50%) scale(0) rotate(720deg)'
+                        }
+                    ], {
+                        duration: 2000,
+                        easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
+                    }).onfinish = () => {
+                        if (letterElement.parentNode) {
+                            letterElement.remove();
+                        }
+                    };
+                }, index * 200);
+            });
+        }
+
+        // Create floating hearts
+        function createFloatingHearts() {
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.innerHTML = '❤';
+                    heart.style.position = 'fixed';
+                    heart.style.top = `${Math.random() * 100}%`;
+                    heart.style.left = `${Math.random() * 100}%`;
+                    heart.style.fontSize = `${Math.random() * 30 + 20}px`;
+                    heart.style.color = i % 2 === 0 ? '#FF6B8B' : '#8A2BE2';
+                    heart.style.opacity = '0';
+                    heart.style.zIndex = '999';
+                    heart.style.pointerEvents = 'none';
+                    heart.style.userSelect = 'none';
+
+                    document.body.appendChild(heart);
+
+                    // Animate heart
+                    heart.animate([
+                        {
+                            opacity: 0,
+                            transform: 'translateY(0) scale(0)'
+                        },
+                        {
+                            opacity: 1,
+                            transform: 'translateY(-100px) scale(1)'
+                        },
+                        {
+                            opacity: 0,
+                            transform: 'translateY(-200px) scale(0)'
+                        }
+                    ], {
+                        duration: 3000,
+                        easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
+                    }).onfinish = () => {
+                        if (heart.parentNode) {
+                            heart.remove();
+                        }
+                    };
+                }, i * 200);
+            }
+        }
+
+        // Show notification
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.textContent = message;
+            notification.style.position = 'fixed';
+            notification.style.top = '100px';
+            notification.style.right = '30px';
+            notification.style.background = 'rgba(28, 28, 44, 0.9)';
+            notification.style.color = 'white';
+            notification.style.padding = '15px 25px';
+            notification.style.borderRadius = '10px';
+            notification.style.border = '1px solid rgba(138, 43, 226, 0.3)';
+            notification.style.fontFamily = "'Cormorant Garamond', serif";
+            notification.style.fontSize = '1rem';
+            notification.style.zIndex = '1000';
+            notification.style.transform = 'translateX(100%)';
+            notification.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+            notification.style.backdropFilter = 'blur(10px)';
+
+            document.body.appendChild(notification);
+
+            // Slide in
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 10);
+
+            // Remove after delay
+            setTimeout(() => {
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.remove();
+                    }
+                }, 500);
+            }, 3000);
+        }
+
+        // Auto-play music after user interaction
+        document.addEventListener('click', function initMusic() {
+            if (!isMusicPlaying) {
+                backgroundMusic.play().then(() => {
+                    isMusicPlaying = true;
+                    musicToggle.innerHTML = '<i class="fas fa-volume-up"></i>';
+                    musicToggle.style.color = '#FF6B8B';
+                }).catch(() => {
+                    // Auto-play failed
+                });
+            }
+            document.removeEventListener('click', initMusic);
+        });
+
+        // Initialize everything
+        window.addEventListener('load', function () {
+            createBackgroundParticles();
+
+            // Start fade-in animations
+            document.querySelectorAll('.fade-in').forEach(el => {
+                el.style.animationPlayState = 'running';
+            });
+
+            // Create initial floating elements
+            setTimeout(createFloatingHearts, 1000);
+
+            // Show welcome notification
+            setTimeout(() => {
+                showNotification("Welcome to a timeless expression of love");
+            }, 1500);
+        });
+
+        // Handle page visibility
+        document.addEventListener('visibilitychange', function () {
+            if (document.hidden && isMusicPlaying) {
+                backgroundMusic.pause();
+            } else if (!document.hidden && isMusicPlaying) {
+                backgroundMusic.play();
+            }
+        });
+    </script>
+</body>
+
+</html>
